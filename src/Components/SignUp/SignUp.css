@@ -1,0 +1,10 @@
+.sign-up {
+    background-image: url('../../../public/Images/home.png');
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+.btn-signup {
+    background-color: #5680E9;
+}
