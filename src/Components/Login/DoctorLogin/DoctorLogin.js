@@ -1,6 +1,7 @@
 import './DoctorLogin.css';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DoctorLogin = () => {
     return (
@@ -24,7 +25,7 @@ const DoctorLogin = () => {
                         <button className="btn btn-link text-md">Forgot password?</button>
                     </div>
                     <div className='flex justify-center mt-5'>
-                        <button className="btn login-btn w-full">Login</button>
+                        <Link to='/doctor-page' className='w-full'><button className="btn login-btn w-full">Login</button></Link>
                     </div>
                 </form>
             </div>

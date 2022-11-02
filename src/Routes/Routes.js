@@ -3,6 +3,7 @@ import Home from '../Components/Home/Home';
 import DoctorLogin from '../Components/Login/DoctorLogin/DoctorLogin';
 import Login from '../Components/Login/Login/Login';
 import PatientLogin from '../Components/Login/PatientLogin/PatientLogin';
+import DoctorPage from '../Components/Pages/DoctorPage/DoctorPage';
 import PatientPage from '../Components/Pages/PatientPage/PatientPage';
 import DoctorSignup from '../Components/SignUp/DoctorSignup/DoctorSignup';
 import PatientSignup from '../Components/SignUp/PatientSignup/PatientSignup';
@@ -44,5 +45,9 @@ export const router = createBrowserRouter([
     {
         path: '/patient-page',
         element: <PatientPage></PatientPage>
+    },
+    {
+        path: '/doctor-page',
+        element: <DoctorPage></DoctorPage>
     }
 ]);

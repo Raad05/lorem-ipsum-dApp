@@ -7,7 +7,7 @@ const PatientPage = () => {
         <div className='patient-page'>
             <div className='grid grid-cols-3'>
                 <div className='patient-profile'>
-                    <div className='patient-info w-4/5 bg-slate-400 m-auto p-12 mt-16 rounded'>
+                    <div className='patient-info w-4/5 m-auto p-12 mt-16 rounded'>
                         <div className='identity'>
                             <h1 className='text-5xl text-center font-bold'>Shakib Al Hasan</h1>
                             <p className='text-xl text-center my-5 px-16'>Blockchain Developer Bangladesh</p>
@@ -18,7 +18,7 @@ const PatientPage = () => {
                         </div>
                     </div>
                     <div className='doctors w-4/5 m-auto p-12 mt-16 rounded'>
-                        <div className='identity'>
+                        <div className='doctor-list'>
                             <h1 className='text-3xl font-bold'>Current Doctors</h1>
                             <p className='text-lg my-5'>Dr. Fahmid</p>
                             <hr />
@@ -26,9 +26,6 @@ const PatientPage = () => {
                             <hr />
                             <p className='text-lg my-5'>Dr. Miraj</p>
                             <hr />
-                            <div className='doctors'>
-                                <p className='text-xl text-center my-5 px-16'></p>
-                            </div>
                         </div>
                     </div>
                 </div>
