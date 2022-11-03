@@ -1,6 +1,10 @@
-.home {
+.dashboard {
     background-image: url('/src/assets/Images/home.png');
     background-repeat: no-repeat;
     height: 100vh;
     background-size: cover;
+}
+
+.btn-dashboard {
+    background-color: #84CEEB;
 }
