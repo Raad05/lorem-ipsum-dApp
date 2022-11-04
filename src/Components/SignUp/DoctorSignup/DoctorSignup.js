@@ -21,11 +21,11 @@ const DoctorSignup = () => {
                         <input type="text" placeholder="Medical License Number and upload license" className="input w-4/5 mb-5" />
                     </label>
                     <div className='flex justify-center mt-5'>
-                        <button className="btn login-btn w-full">Sign Up</button>
+                        <button type='submit' className="btn login-btn w-full">Sign Up</button>
                     </div>
                 </form>
             </div>
-        </div>
+        </div >
     );
 };
 
