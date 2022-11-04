@@ -1,8 +1,44 @@
 import './PatientProfile.css';
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const PatientProfile = () => {
+    const [patients, setPatients] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // const loadData = async () => {
+        //     const url = 'http://127.0.0.1:5000/api/v1/namespaces/default/apis/ipsum_lorem/query/healthRecordGet';
+        //     const res = await fetch(url, {
+        //         method: "POST",
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({
+        //             input: {},
+        //             "options": {}
+        //         })
+        //     });
+        //     const data = await res.json();
+        //     setTimeout(() => {
+        //         setPatients(data, 5000);
+        //     })
+        // }
+        // loadData();
+        const url = 'http://127.0.0.1:5000/api/v1/namespaces/default/apis/ipsum_lorem/query/healthRecordGet';
+        fetch(url, {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                input: {},
+                "options": {}
+            })
+        })
+            .then(res => res.json())
+            .then(data => {
+                setPatients(data.output[0]);
+                setLoading(false);
+            });
+    }, [])
+    console.log(patients);
+
     const handleUpload = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -13,12 +49,34 @@ const PatientProfile = () => {
         const drug = form.drug.value;
         const unit = form.unit.value;
         const dosage = form.dosage.value;
-        const follow = form.follow.value;
-        console.log(date, diagnosis, bp, pulse, drug, unit, dosage, follow);
+
+        fetch('http://127.0.0.1:5000/api/v1/namespaces/default/apis/ipsum_lorem/invoke/healthRecordStore', {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                input: {
+                    "_patientID": "20101172",
+                    "_doctorID": "1234567",
+                    "_date": date,
+                    "_diagnosedWith": diagnosis,
+                    "_bloodPressure": bp,
+                    "_pulseRate": pulse,
+                    "_drug": drug,
+                    "_unit": unit,
+                    "_thingsToFollow": dosage
+                },
+                "options": {}
+            })
+        });
+        console.log('Posted');
     }
 
     return (
         <div className='patient-profile'>
+            {
+                !loading &&
+                <p>{patients.bloodPressure} and {patients.diagnosedWith}</p>
+            }
             <h1 className='font-bold text-center text-5xl mt-5'>Patient Profile</h1>
             <h3 className='text-3xl mx-20 mt-5'><span className='font-bold'>#Patient name: </span>Sampad Sulaiman</h3>
             <div className="grid grid-cols-3 mt-16 ml-20">
@@ -69,10 +127,6 @@ const PatientProfile = () => {
                             <div className='flex items-center my-5 justify-between'>
                                 <p className='mr-10 text-lg font-bold'>Dosage: </p>
                                 <input type="text" name='dosage' placeholder="N/A" className="input input-bordered w-full max-w-xs mr-80" />
-                            </div>
-                            <div className='flex items-center my-5 justify-between'>
-                                <p className='mr-10 text-lg font-bold'>Things to Follow: </p>
-                                <input type="text" name='follow' placeholder="Take rest" className="input input-bordered w-full max-w-xs mr-80" />
                             </div>
                             <div className='text-right'>
                                 <button type="submit" className='btn btn-primary'>Upload</button>

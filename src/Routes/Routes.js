@@ -5,6 +5,7 @@ import DoctorLogin from '../Components/Login/DoctorLogin/DoctorLogin';
 import Login from '../Components/Login/Login/Login';
 import PatientLogin from '../Components/Login/PatientLogin/PatientLogin';
 import DoctorPage from '../Components/Pages/DoctorPage/DoctorPage';
+import MedicalRecords from '../Components/Pages/MedicalRecords/MedicalRecords';
 import PatientPage from '../Components/Pages/PatientPage/PatientPage';
 import PatientProfile from '../Components/Pages/PatientProfile/PatientProfile';
 import DoctorSignup from '../Components/SignUp/DoctorSignup/DoctorSignup';
@@ -55,5 +56,9 @@ export const router = createBrowserRouter([
     {
         path: "/patient-profile",
         element: <PatientProfile></PatientProfile>
+    },
+    {
+        path: '/medical-records',
+        element: <MedicalRecords></MedicalRecords>
     }
 ]);
