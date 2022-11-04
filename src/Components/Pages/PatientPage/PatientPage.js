@@ -41,16 +41,12 @@ const PatientPage = () => {
                             <p className='text-lg my-5'><span className='font-bold'>Address: </span> Gulshan-2, Dhaka-1212, Bangladesh</p>
                             <hr />
                         </div>
-                        <div className="features flex justify-evenly">
-                            <div className='feature w-60 h-60 rounded p-10 text-3xl font-bold'>
+                        <div className="features flex justify-center">
+                            <div className='feature w-60 h-60 rounded p-10 text-3xl font-bold mx-10'>
                                 <p>Medical Records</p>
                                 <button className="view-btn btn mx-3 font-bold mt-14 ml-20 w-24 border-none">View</button>
                             </div>
-                            <div className='feature w-60 h-60 rounded p-10 text-3xl font-bold'>
-                                <p>Trusted Contacts</p>
-                                <button className="view-btn btn mx-3 font-bold mt-14 ml-20 w-24 border-none">View</button>
-                            </div>
-                            <div className='feature w-60 h-60 rounded p-10 text-3xl font-bold'>
+                            <div className='feature w-60 h-60 rounded p-10 text-3xl font-bold mx-10'>
                                 <p>Authorize</p>
                                 <button className="view-btn btn mx-3 font-bold mt-20 ml-20 w-24 border-none">View</button>
                             </div>

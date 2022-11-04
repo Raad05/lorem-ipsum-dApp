@@ -1,6 +1,7 @@
 import './DoctorPage.css';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const DoctorPage = () => {
     return (
@@ -15,7 +16,6 @@ const DoctorPage = () => {
                     </div>
                     <div className='w-4/5 m-auto p-12 mt-16 rounded'>
                         <div className='text-center'>
-                            <button className="btn-patient-list btn mx-3 font-bold block w-full h-40 text-xl mb-10 border-none">Add Patient</button>
                             <button className="btn-patient-list btn mx-3 font-bold block w-full h-40 text-xl mb-10 border-none">View All Patients</button>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ const DoctorPage = () => {
                                 <p className='text-lg'><span className='font-bold'>Age: </span>22</p>
                                 <p className='text-lg'><span className='font-bold'>Problem: </span>Ulcer</p>
                             </div>
-                            <button className='btn-view-patient btn w-32 h-20 border-none'>View Patient Profile</button>
+                            <Link to='/patient-profile'><button className='btn-view-patient btn w-32 h-20 border-none'>View Patient Profile</button></Link>
                         </div>
                         <hr className='mt-5' />
                         <div className="flex justify-between items-center px-10 mt-5">
