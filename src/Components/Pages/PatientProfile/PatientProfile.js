@@ -6,22 +6,6 @@ const PatientProfile = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // const loadData = async () => {
-        //     const url = 'http://127.0.0.1:5000/api/v1/namespaces/default/apis/ipsum_lorem/query/healthRecordGet';
-        //     const res = await fetch(url, {
-        //         method: "POST",
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify({
-        //             input: {},
-        //             "options": {}
-        //         })
-        //     });
-        //     const data = await res.json();
-        //     setTimeout(() => {
-        //         setPatients(data, 5000);
-        //     })
-        // }
-        // loadData();
         const url = 'http://127.0.0.1:5000/api/v1/namespaces/default/apis/ipsum_lorem/query/healthRecordGet';
         fetch(url, {
             method: "POST",
@@ -33,11 +17,10 @@ const PatientProfile = () => {
         })
             .then(res => res.json())
             .then(data => {
-                setPatients(data.output[0]);
+                setPatients(data.output);
                 setLoading(false);
             });
     }, [])
-    console.log(patients);
 
     const handleUpload = (event) => {
         event.preventDefault();
@@ -73,10 +56,6 @@ const PatientProfile = () => {
 
     return (
         <div className='patient-profile'>
-            {
-                !loading &&
-                <p>{patients.bloodPressure} and {patients.diagnosedWith}</p>
-            }
             <h1 className='font-bold text-center text-5xl mt-5'>Patient Profile</h1>
             <h3 className='text-3xl mx-20 mt-5'><span className='font-bold'>#Patient name: </span>Sampad Sulaiman</h3>
             <div className="grid grid-cols-3 mt-16 ml-20">
@@ -135,6 +114,20 @@ const PatientProfile = () => {
                     </form>
                 </div>
             </div>
+            {
+                !loading &&
+                patients.map(patient => <div className='flex justify-between mx-20 bg-gray-300 mt-10 p-10 rounded-xl font-bold text-lg'>
+                    <p className=''>Date: {patient.date}</p>
+                    <p className=''>Patient ID: {patient.patientID}</p>
+                    <p className=''>Doctor ID: {patient.doctorID}</p>
+                    <p className=''>diagnosed With: {patient.diagnosedWith}</p>
+                    <p className=''>Blood Pressure: {patient.bloodPressure}</p>
+                    <p className=''>Pulse Rate: {patient.pulseRate}</p>
+                    <p className=''>Drug: {patient.drug}</p>
+                    <p className=''>Unit: {patient.unit}</p>
+                    <p className=''>Dosage: {patient.thingsToFollow}</p>
+                </div>)
+            }
         </div>
     );
 };
