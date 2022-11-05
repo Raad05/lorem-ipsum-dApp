@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const DoctorPage = () => {
     return (
-        <div className='doctor-page'>
+        <div className='doctor-page bg-gray-200'>
             <div className="grid grid-cols-3">
                 <div className="doctor-profile">
                     <div className='doctor-info w-4/5 m-auto p-12 mt-16 rounded'>

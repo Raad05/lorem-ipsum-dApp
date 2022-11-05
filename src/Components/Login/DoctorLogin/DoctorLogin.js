@@ -2,13 +2,37 @@ import './DoctorLogin.css';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 const DoctorLogin = () => {
+    const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleSignup = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                navigate('/patient-page')
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
     return (
         <div className='doctor-login'>
             <h1 className='text-center p-10 text-5xl font-bold'>Doctor Login</h1>
             <div className="login-form w-1/4 h-1/2 m-auto mt-10">
-                <form>
+                <form onSubmit={handleSignup}>
                     <label>
                         <p className='mb-3 text-xl'>Email</p>
                         <input type="text" placeholder="Email" name='email' className="input w-full mb-5" />

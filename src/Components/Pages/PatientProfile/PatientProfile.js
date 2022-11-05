@@ -117,18 +117,19 @@ const PatientProfile = () => {
                     </form>
                 </div>
             </div>
-            {/* {
-                !loading &
-                <AuthContext.Provider value={authInfo}>
-                    <MedicalRecords></MedicalRecords>
-                </AuthContext.Provider>
-            } */}
-            {/* {
-                !loading &&
-                patients.map(patient => console.log(patient.diagnosedWith))
-            } */}
-
-
+            {!loading &&
+                patients.map(patient => <div className='patient flex justify-between mx-28 bg-gray-300 mt-10 p-10 rounded-xl font-bold text-xl text-white'>
+                    <p className='p-5'>Date: {patient.date}</p>
+                    <p className='p-5'>Patient ID: {patient.patientID}</p>
+                    <p className='p-5'>Doctor ID: {patient.doctorID}</p>
+                    <p className='p-5'>diagnosed With: {patient.diagnosedWith}</p>
+                    <p className='p-5'>Blood Pressure: {patient.bloodPressure}</p>
+                    <p className='p-5'>Pulse Rate: {patient.pulseRate}</p>
+                    <p className='p-5'>Drug: {patient.drug}</p>
+                    <p className='p-5'>Unit: {patient.unit}</p>
+                    <p className='p-5'>Dosage: {patient.thingsToFollow}</p>
+                </div>)
+            }
         </div>
     );
 };

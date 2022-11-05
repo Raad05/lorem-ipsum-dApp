@@ -1,6 +1,7 @@
 import './PatientPage.css';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PatientPage = () => {
     return (
@@ -44,7 +45,7 @@ const PatientPage = () => {
                         <div className="features flex justify-center">
                             <div className='feature w-60 h-60 rounded p-10 text-3xl font-bold mx-10'>
                                 <p>Medical Records</p>
-                                <button className="view-btn btn mx-3 font-bold mt-14 ml-20 w-24 border-none">View</button>
+                                <Link to='/medical-records'><button className="view-btn btn mx-3 font-bold mt-14 ml-20 w-24 border-none">View</button></Link>
                             </div>
                             <div className='feature w-60 h-60 rounded p-10 text-3xl font-bold mx-10'>
                                 <p>Authorize</p>
