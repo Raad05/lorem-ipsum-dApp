@@ -54,6 +54,9 @@ const PatientProfile = () => {
         console.log('Posted');
     }
 
+    const authInfo = { patients };
+    console.log(authInfo.patients);
+
     return (
         <div className='patient-profile'>
             <h1 className='font-bold text-center text-5xl mt-5'>Patient Profile</h1>
@@ -114,20 +117,18 @@ const PatientProfile = () => {
                     </form>
                 </div>
             </div>
-            {
+            {/* {
+                !loading &
+                <AuthContext.Provider value={authInfo}>
+                    <MedicalRecords></MedicalRecords>
+                </AuthContext.Provider>
+            } */}
+            {/* {
                 !loading &&
-                patients.map(patient => <div className='flex justify-between mx-20 bg-gray-300 mt-10 p-10 rounded-xl font-bold text-lg'>
-                    <p className=''>Date: {patient.date}</p>
-                    <p className=''>Patient ID: {patient.patientID}</p>
-                    <p className=''>Doctor ID: {patient.doctorID}</p>
-                    <p className=''>diagnosed With: {patient.diagnosedWith}</p>
-                    <p className=''>Blood Pressure: {patient.bloodPressure}</p>
-                    <p className=''>Pulse Rate: {patient.pulseRate}</p>
-                    <p className=''>Drug: {patient.drug}</p>
-                    <p className=''>Unit: {patient.unit}</p>
-                    <p className=''>Dosage: {patient.thingsToFollow}</p>
-                </div>)
-            }
+                patients.map(patient => console.log(patient.diagnosedWith))
+            } */}
+
+
         </div>
     );
 };

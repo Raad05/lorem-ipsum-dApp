@@ -10,12 +10,12 @@ const DoctorLogin = () => {
             <div className="login-form w-1/4 h-1/2 m-auto mt-10">
                 <form>
                     <label>
-                        <p className='mb-3 text-xl'>Username</p>
-                        <input type="text" placeholder="Username" className="input w-full mb-5" />
+                        <p className='mb-3 text-xl'>Email</p>
+                        <input type="text" placeholder="Email" name='email' className="input w-full mb-5" />
                     </label>
                     <label>
                         <p className='mb-3 text-xl'>Password</p>
-                        <input type="password" placeholder="Password" className="input w-full mb-3" />
+                        <input type="password" placeholder="Password" name='password' className="input w-full mb-3" />
                     </label>
                     <div className="flex justify-between items-center">
                         <div className='flex items-center'>
