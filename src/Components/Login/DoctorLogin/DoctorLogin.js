@@ -1,7 +1,6 @@
 import './DoctorLogin.css';
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
@@ -49,7 +48,7 @@ const DoctorLogin = () => {
                         <button className="btn btn-link text-md">Forgot password?</button>
                     </div>
                     <div className='flex justify-center mt-5'>
-                        <Link to='/doctor-page' className='w-full'><button className="btn login-btn w-full">Login</button></Link>
+                        <button type='submit' className="btn login-btn w-full">Login</button>
                     </div>
                 </form>
             </div>
