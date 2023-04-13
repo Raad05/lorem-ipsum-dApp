@@ -1,3 +1,24 @@
+# Lorem Ipsum
+Lorem Ipsum is a national blockchain-driven private cloud-based platform for Bangladesh, specifically designed for healthcare administration. This platform is built with the goal of providing a secure and decentralized system for healthcare data management, ensuring patient privacy and security.
+
+Tech Stack
+The tech stack used for this project includes:
+
+## Frontend
+- ReactJS
+- React-router
+- Tailwind CSS with DaisyUI
+## Backend
+- Hyperledger Firefly for Decentralized data
+- Solidity for Smart Contracts
+
+This combination of technologies enables us to build a robust and scalable platform that leverages the benefits of blockchain technology to ensure transparency and immutability of data. With ReactJS as our frontend framework, we can create an intuitive and user-friendly interface for healthcare providers and patients. React-router helps us to handle client-side routing efficiently, while Tailwind CSS with DaisyUI provides a set of customizable and responsive UI components to build a modern-looking interface.
+
+On the backend, we use Hyperledger Firefly to ensure a decentralized and secure data management system. Hyperledger Firefly is a distributed ledger technology that provides privacy, security, and scalability for enterprise-grade applications. We also use Solidity for writing smart contracts, which are self-executing agreements that run on the blockchain. These smart contracts ensure the immutability of data, automate processes, and provide an additional layer of security.
+
+
+
+
 # Getting Started with Create React Application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
